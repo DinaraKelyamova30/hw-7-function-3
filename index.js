@@ -1,18 +1,17 @@
-let first = prompt('Write first number');
-let last = prompt('Write second number');
+//прості числа
+first = prompt('Write first number');
+last = prompt('Write second number');
 
-function prime() {
-    for (let count = first; count < last; count++) {
-        let check = true;
-        for (let i = 2; i < count; i++) {
-            if (count % i == 0) {
-                check = false;
-            }
-        }
-        if (check) {
-            check = true;
-        }
-        return check;
+function prime(n) {
+    if (n < 2) return false;
+    for (let i = 2; i < n; i++) {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
+for (var i = first; i < last; i++) {
+    if (prime(i)) {
+        console.log(i);
     }
 }
-console.log(prime(first, last));
