@@ -1,16 +1,18 @@
-function num(n1, n2){
-    n1 = prompt('Write first number');
-    n2 = prompt('Write second number');
-    check = true;
-    for(let i=2; i<=n2; i++){
-        if(n1%i==0){
-            check = false;
-            break;
+let first = prompt('Write first number');
+let last = prompt('Write second number');
+
+function prime() {
+    for (let count = first; count < last; count++) {
+        let check = true;
+        for (let i = 2; i < count; i++) {
+            if (count % i == 0) {
+                check = false;
+            }
         }
-        if(check){
-            ckeck= true;
+        if (check) {
+            check = true;
         }
+        return check;
     }
-    return n1 <= n2;
 }
-console.log(num(n1, n2));
+console.log(prime(first, last));
